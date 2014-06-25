@@ -4,7 +4,8 @@ MAINTAINER John Weaver <john@saebyn.info>
 
 RUN apt-get update
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y vim git
+RUN apt-get install -y vim git python-pip
+RUN pip install flake8
 
 RUN useradd dev
 RUN echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
