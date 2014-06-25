@@ -87,6 +87,10 @@ vnoremap <leader>r "hy:%s/<C-r>h//gc<left><left><left>
 set incsearch
 set hlsearch
 
+" Relative line numbers on the left, quite nice.
+set number
+set relativenumber
+
 " make Esc happen without waiting for timeoutlen
 " fixes Powerline delay
 augroup FastEscape
