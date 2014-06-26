@@ -19,14 +19,15 @@ WORKDIR /home/dev
 ENV HOME /home/dev
 ENV LC_ALL en_US.UTF-8
 
+ADD https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein /usr/local/bin/lein
+RUN chmod +x /usr/local/bin/lein
+
 RUN chown -R dev:dev $HOME/
 USER dev
 
 RUN mkdir -p $HOME/.vim/bundle
 ADD vimrc $HOME/.vimrc
 ADD bundles.vim $HOME/.vim/bundles.vim
-ADD https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein /usr/local/bin/lein
-RUN chmod +x /usr/local/bin/lein
 
 RUN git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 RUN vim -u $HOME/.vim/bundles.vim +PluginInstall +qall
