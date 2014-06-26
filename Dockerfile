@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER John Weaver <john@saebyn.info>
 
+ENV LAST_UPDATED 2014-06-26
 RUN apt-get update
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get install -y vim git python-pip
