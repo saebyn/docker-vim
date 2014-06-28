@@ -20,7 +20,7 @@ ENV HOME /home/dev
 ENV LC_ALL en_US.UTF-8
 
 ADD https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein /usr/local/bin/lein
-RUN chmod +x /usr/local/bin/lein
+RUN chmod 755 /usr/local/bin/lein
 
 RUN chown -R dev:dev $HOME/
 USER dev
