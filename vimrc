@@ -67,6 +67,7 @@ au BufNewFile,BufRead *.cljx set filetype=clojure
 au BufNewFile,BufRead *.md set ft=markdown
 
 let g:SuperTabDefaultCompletionType = "context"
+let g:paredit_mode = 1
 
 set completeopt=menuone,longest,preview
 
