@@ -5,7 +5,7 @@ MAINTAINER John Weaver <john@saebyn.info>
 ENV LAST_UPDATED 2014-06-26
 RUN apt-get update
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y vim git python-pip wget openjdk-7-jre
+RUN apt-get install -y vim git python-pip wget openjdk-7-jre-headless
 RUN pip install flake8
 
 RUN useradd dev
@@ -34,3 +34,4 @@ RUN git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.
 RUN vim -u $HOME/.vim/bundles.vim +PluginInstall +qall
 
 ENTRYPOINT ["vim"]
+CMD []

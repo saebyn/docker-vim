@@ -13,7 +13,7 @@ set fileencodings=ucs-bom,utf8,prc
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
 
-let mapleader=","             " change the leader to be a comma vs slash
+let mapleader=","            " change the leader to be a comma vs slash
 
 syntax on                    " syntax highlighing
 filetype on                  " try to detect filetypes
@@ -43,27 +43,26 @@ set encoding=utf-8
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:Powerline_symbols = 'fancy'
 
-let g:vimclojure#ParenRainbow = 1
-let g:vimclojure#DynamicHighlighting = 1
-let g:vimclojure#FuzzyIndent = 1
+"let g:vimclojure#ParenRainbow = 1
+"let g:vimclojure#DynamicHighlighting = 1
+"let g:vimclojure#FuzzyIndent = 1
 "let g:vimclojure#FuzzyIndentPatterns .= ",fresh"
 
 nnoremap / /\v
 vnoremap / /\v
 
-au FileType html set omnifunc=htmlcomplete#CompleteTags
-
 au FileType python setlocal shiftwidth=4 expandtab tabstop=4 nowrap softtabstop=4 smarttab shiftround ff=unix
 au FileType java set shiftwidth=4 expandtab tabstop=4
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType html setl shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix
+au FileType html setl shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix omnifunc=htmlcomplete#CompleteTags
 
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix
-au BufNewFile,BufReadPost *.js setl ft=javascript shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix
+au BufNewFile,BufRead *.coffee setl shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix
+au BufNewFile,BufRead *.js setl ft=javascript shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix
 au BufNewFile,BufRead *.cljs set filetype=clojure
 au BufNewFile,BufRead *.cljx set filetype=clojure
-
+au BufNewFile,BufRead *.html set ft=html
+au BufNewFile,BufRead *.template set ft=html
 au BufNewFile,BufRead *.md set ft=markdown
 
 let g:SuperTabDefaultCompletionType = "context"
@@ -74,8 +73,7 @@ set completeopt=menuone,longest,preview
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_ignore="W293"
 
-map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
-
+" RestructuredText heading shortcuts
 nnoremap <leader>1 yyPVr=jyypVr=
 nnoremap <leader>2 yypVr=
 nnoremap <leader>3 yypVr-
