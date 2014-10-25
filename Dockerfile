@@ -25,6 +25,8 @@ RUN /usr/local/bin/lein
 
 RUN chown -R dev:dev $HOME/
 USER dev
+RUN mkdir -p $HOME/.lein
+ADD lein-profiles.clj $HOME/.lein/profiles.clj
 
 RUN mkdir -p $HOME/.vim/bundle
 ADD vimrc $HOME/.vimrc
