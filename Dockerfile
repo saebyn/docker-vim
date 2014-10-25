@@ -5,7 +5,7 @@ MAINTAINER John Weaver <john@saebyn.info>
 ENV LAST_UPDATED 2014-06-26
 RUN apt-get update
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y vim git python-pip wget openjdk-7-jre-headless
+RUN apt-get install -y vim git python-pip wget openjdk-7-jre
 RUN pip install flake8
 
 RUN useradd dev
@@ -19,12 +19,15 @@ WORKDIR /home/dev
 ENV HOME /home/dev
 ENV LC_ALL en_US.UTF-8
 
+ENTRYPOINT ["vim"]
+CMD []
+
 ADD https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein /usr/local/bin/lein
 RUN chmod 755 /usr/local/bin/lein
-RUN /usr/local/bin/lein
 
 RUN chown -R dev:dev $HOME/
 USER dev
+RUN /usr/local/bin/lein
 RUN mkdir -p $HOME/.lein
 ADD lein-profiles.clj $HOME/.lein/profiles.clj
 
@@ -34,6 +37,3 @@ ADD bundles.vim $HOME/.vim/bundles.vim
 
 RUN git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 RUN vim -u $HOME/.vim/bundles.vim +PluginInstall +qall
-
-ENTRYPOINT ["vim"]
-CMD []

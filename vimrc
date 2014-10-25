@@ -12,6 +12,7 @@ set fileencodings=ucs-bom,utf8,prc
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
+command! Q :q
 
 let mapleader=","            " change the leader to be a comma vs slash
 
@@ -105,3 +106,10 @@ let g:Powerline_symbols = 'unicode'
 
 highlight ColorColumn ctermbg=Magenta
 call matchadd('ColorColumn', '\%81v', 100)
+
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+command! Console execute "Start! lein repl :headless"
