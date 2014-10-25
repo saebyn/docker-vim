@@ -112,4 +112,4 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-command! Console execute "Start! lein repl :headless"
+command! Console :Start! lein repl :headless
