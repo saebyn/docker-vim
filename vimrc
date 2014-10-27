@@ -39,6 +39,8 @@ set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler                   " Show some info, even without statuslines.
 set laststatus=2            " Always show statusline, even if only 1 window.
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
+set smarttab
+set nowrap
 
 set encoding=utf-8
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
@@ -52,19 +54,19 @@ let g:Powerline_symbols = 'fancy'
 nnoremap / /\v
 vnoremap / /\v
 
-au FileType python setlocal shiftwidth=4 expandtab tabstop=4 nowrap softtabstop=4 smarttab shiftround ff=unix
-au FileType java set shiftwidth=4 expandtab tabstop=4
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType html setl shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix omnifunc=htmlcomplete#CompleteTags
-
-au BufNewFile,BufRead *.coffee setl shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix
-au BufNewFile,BufRead *.js setl ft=javascript shiftwidth=2 expandtab tabstop=2 smarttab shiftround nowrap ff=unix
+au BufNewFile,BufRead *.coffee setl shiftwidth=4 tabstop=4 shiftround ff=unix
+au BufNewFile,BufRead *.js setl ft=javascript shiftwidth=4 tabstop=4 shiftround ff=unix
 au BufNewFile,BufRead *.cljs set filetype=clojure
 au BufNewFile,BufRead *.cljx set filetype=clojure
 au BufNewFile,BufRead *.html set ft=html
 au BufNewFile,BufRead *.template set ft=html
 au BufNewFile,BufRead *.md set ft=markdown
+
+au FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 shiftround ff=unix
+au FileType java set shiftwidth=4 tabstop=4
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+au FileType html setl shiftwidth=2 tabstop=2 shiftround ff=unix omnifunc=htmlcomplete#CompleteTags
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:paredit_mode = 1
