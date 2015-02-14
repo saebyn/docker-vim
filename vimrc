@@ -74,7 +74,6 @@ let g:paredit_mode = 1
 set completeopt=menuone,longest,preview
 
 autocmd BufWritePost *.py call Flake8()
-let g:flake8_ignore="W293"
 
 " RestructuredText heading shortcuts
 nnoremap <leader>1 yyPVr=jyypVr=
