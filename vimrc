@@ -114,3 +114,5 @@ augroup reload_vimrc " {
 augroup END " }
 
 command! Console :Start! lein repl :headless
+
+cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>
