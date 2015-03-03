@@ -54,16 +54,16 @@ let g:Powerline_symbols = 'fancy'
 nnoremap / /\v
 vnoremap / /\v
 
-au BufNewFile,BufRead *.coffee setl shiftwidth=4 tabstop=4 shiftround ff=unix
-au BufNewFile,BufRead *.js setl ft=javascript shiftwidth=4 tabstop=4 shiftround ff=unix
-au BufNewFile,BufRead *.cljs set filetype=clojure
-au BufNewFile,BufRead *.cljx set filetype=clojure
+au BufNewFile,BufRead *.coffee setl shiftwidth=4 tabstop=4 shiftround ff=unix foldmethod=indent
+au BufNewFile,BufRead *.js setl ft=javascript shiftwidth=4 tabstop=4 shiftround ff=unix foldmethod=indent
+au BufNewFile,BufRead *.cljs set filetype=clojure foldmethod=indent
+au BufNewFile,BufRead *.cljx set filetype=clojure foldmethod=indent
 au BufNewFile,BufRead *.html set ft=html
 au BufNewFile,BufRead *.template set ft=html
 au BufNewFile,BufRead *.md set ft=markdown
 
-au FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 shiftround ff=unix
-au FileType java set shiftwidth=4 tabstop=4
+au FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 shiftround ff=unix foldmethod=indent
+au FileType java set shiftwidth=4 tabstop=4 foldmethod=indent
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType html setl shiftwidth=2 tabstop=2 shiftround ff=unix omnifunc=htmlcomplete#CompleteTags
