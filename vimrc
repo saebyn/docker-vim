@@ -100,8 +100,8 @@ augroup FastEscape
   au InsertLeave * set timeoutlen=1000
 augroup END
 
-set background=dark
 colorscheme hybrid
+set background=dark
 hi Normal ctermbg=none
 
 let g:Powerline_symbols = 'unicode'
