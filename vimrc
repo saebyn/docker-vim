@@ -103,6 +103,7 @@ augroup END
 colorscheme hybrid
 set background=dark
 hi Normal ctermbg=none
+hi LineNr ctermbg=lightgrey
 
 let g:Powerline_symbols = 'unicode'
 
