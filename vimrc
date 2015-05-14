@@ -119,3 +119,7 @@ command! Console :Start! lein repl :headless
 
 autocmd QuickFixCmdPost *grep* cwindow
 set diffopt=vertical
+
+
+vmap "+y :!xclip -f -sel clip
+map "+p :r!xclip -o -sel clip
