@@ -23,7 +23,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'rust-lang/rust.vim'
-Bundle 'vim-scripts/tla.vim'
+Bundle 'vim-scripts/TLA'
 
 " Clojure stuff
 Bundle 'vim-scripts/paredit.vim'

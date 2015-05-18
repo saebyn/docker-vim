@@ -68,8 +68,6 @@ au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType html setl shiftwidth=2 tabstop=2 shiftround ff=unix omnifunc=htmlcomplete#CompleteTags
 
-so ~/.vim/bundles/tla.vim/colors/tla.vim
-au BufNewFile,BufRead *.tla set ft=tla
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:paredit_mode = 1
